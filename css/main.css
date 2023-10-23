@@ -1,0 +1,115 @@
+/*responsividade em imagens*/
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/*Exemplo com FlexBox*/
+.flex-body {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    margin: 2em;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container li {
+    flex: auto;
+    background-color: rgba(0, 0, 0, .9);
+    color: #fff;
+    border-radius: .5em;
+    padding: .5em;
+    text-align: center;
+}
+
+.container:first-child {
+    align-self: end;
+}
+
+/*examplo com Grid*/
+.grid-body {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    margin: 0;
+    padding: 1em;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.article-1 {
+    max-width: 940px;
+    padding: 10px;
+    border-radius: 4px;
+    display: grid;
+    /*grid-template-columns: 1fr 3fr;*/
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /*pode usar repeat pra setar n duma vez*/
+    gap: 20px; /*para os dois, linha e coluna*/
+    /*row-gap: 20px;*/
+    /*column-gap: 20px;*/
+}
+
+.content {
+    color: #ccc;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.aside {
+    color: #ccc;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+/*exmplo Grid 2*/
+.grid-body-2 {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    margin: 0;
+    padding: 1em;
+}
+
+.article-2 {
+    max-width: 940px;
+    margin: 0 auto;
+    display: grid;
+    /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); !*quantos couberem*!*/
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /*quantos couberem*/
+    /*grid-template-columns: repeat(auto-fill, minmax(200px, auto)); !*quantos couberem*!*/
+    /*grid-template-columns: repeat(3, minmax(200px, 1fr)); !*sempre 3, independente do tamanho da tela*!*/
+    /*grid-template-columns: 1fr 3fr;*/
+    /*grid-template-columns: repeat(3, 1fr); !*pode usar repeat pra setar n duma vez*!*/
+    gap: 20px; /*para os dois, linha e coluna*/
+    /*row-gap: 20px;*/
+    /*column-gap: 20px;*/
+    grid-auto-rows: 100px;
+}
+
+.article-2 > * {
+    color: #ccc;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+/*multi-col example*/
+.multicol {
+    column-width: 250px;
+    column-gap: 20px;
+    column-count: 3; /*somente isso, vai ser sempre 3. com o width, responsivo*/
+
+}
+
+.card {
+    background-color: rgb(207, 232, 220);
+    border: 2px solid rgb(79, 185, 227);
+    padding: 10px;
+    margin: 0 0 1em 0;
+    break-inside: avoid; /*com isso, não quebra conteúdo do card no meio*/
+}
